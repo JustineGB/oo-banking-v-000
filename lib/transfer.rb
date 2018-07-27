@@ -33,11 +33,11 @@ class Transfer #money transfers btw two bank accounts
   end
 
   def reverse_transfer
-    if @status = "complete"
+    if @status != "complete"
+      puts "Cannot reverse because no transaction occured."
+    else  @status = "complete"
       @sender.deposit(@amount) && @receiver.deposit(@amount * -1)
       @status = "reversed"
-    else
-      nil
     end
   end
 
