@@ -17,7 +17,7 @@ class BankAccount
   end
 
   def valid? #instance method, instance already created with name, balance, and status, so you don't need argument here
-   @status == "open" && @balance > @amount ? true : false #if the status is open AND the balance is greater than 0, put true. else, put false.
+   @status == "open" && @balance > 0 && @balance > @amount ? true : false #if the status is open AND the balance is greater than 0, put true. else, put false.
   end
 
   def close_account
