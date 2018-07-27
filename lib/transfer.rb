@@ -35,7 +35,8 @@ class Transfer #money transfers btw two bank accounts
     if @status = "complete"
       @sender.deposit(amount) & @receiver.deposit(amoutn * -1)
     else
-      nil 
+      nil
+    end
   end
 
 
