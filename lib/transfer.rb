@@ -24,6 +24,7 @@ class Transfer #money transfers btw two bank accounts
 
   def execute_transaction
     if self.valid? == false && @sender.balance < @amount
+      binding.pry
       self.status = "rejected"
       return "Transaction rejected. Please check your account balance."
     elsif self.valid? == true && self.status != "complete"
