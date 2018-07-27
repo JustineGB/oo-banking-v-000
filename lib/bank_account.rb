@@ -8,8 +8,8 @@ class BankAccount
     @status = status
   end
 
-  def deposit(integer)
-    @balance += integer   #someVr += other Var equals someVar = someVar + otherVar
+  def deposit(amount)
+    @balance += amount  #someVr += other Var equals someVar = someVar + otherVar
   end
 
   def display_balance
