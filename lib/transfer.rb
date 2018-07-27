@@ -32,6 +32,10 @@ class Transfer #money transfers btw two bank accounts
   end
 
   def reverse_transfer
+    if @status = "complete"
+      @sender.deposit(amount) & @receiver.deposit(amoutn * -1)
+    else
+      nil 
   end
 
 
