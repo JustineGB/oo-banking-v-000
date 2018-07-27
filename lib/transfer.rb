@@ -23,13 +23,12 @@ class Transfer #money transfers btw two bank accounts
     #how to call on the bankaccount class without passing in an argument here?!?!? maybe I can make sender and reciever attr_reader's in bank account and then I can use that method???
 
   def execute_transaction
-    if self.valid? == true && self.status != "complete"
-      @sender.balance = @balance - @amount & @receiver.balance += @amount
-      self.status = "complete"
-    else self.valid? == false
-      @sender.balance < @amount
+    if self.valid? == false && @sender.balance < @amount
       self.status = "rejected"
       return "Transaction rejected. Please check your account balance."
+    elsif self.valid? == true && self.status != "complete"
+      @sender.deposit(amount * -1) && @receiver.deposit(amount)
+      self.status = "complete"
     end
   end
 
