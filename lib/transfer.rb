@@ -26,7 +26,7 @@ class Transfer #money transfers btw two bank accounts
     if self.valid? == false && @sender.balance < @amount then @status == "rejected"
       return "Transaction rejected. Please check your account balance."
     elsif self.valid? == true && self.status != "complete"
-      @sender.deposit(amount * -1) && @receiver.deposit(amount)
+      @sender.deposit(@amount * -1) && @receiver.deposit(@amount)
       self.status = "complete"
     end
   end
